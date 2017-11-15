@@ -40,9 +40,13 @@ cat /myvolume/file.txt
 date; for I in `seq 99999`; do echo "write some information from " + $HOSTNAME > /allvolume/file.txt; done; date;
 ```
 ![alt-текст](https://github.com/den5509/lab_ram/blob/master/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20%D0%BE%D1%82%202017-11-15%2010-10-54.png)
+
 Рисунок 4 — Запуск циклов записи в файл
+
 ![alt-текст](https://github.com/den5509/lab_ram/blob/master/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20%D0%BE%D1%82%202017-11-15%2010-20-43.png)
+
 Рисунок 5 — Часть содержимого файла
+
 ---
 ## Вывод
 В результате, во время одновременной отработки циклов записи из двух контейнеров в 1 файл, не происходило конфликтов и все строки записывались в файл по мере вызова соответствующей команды, а при одновременной записи в файл, она производилась поочередно.
