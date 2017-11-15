@@ -16,7 +16,7 @@ docker run -ti --name=Container1 -v AllVolume:/allvolume alpine
 ```bash
 echo "write some information from " + $HOSTNAME > /allvolume/file.txt
 ```
-![alt-текст](https://github.com/den5509/lab_ram/blob/master/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20%D0%BE%D1%82%202017-11-15%2010-06-13.png)
+[logo]:https://github.com/den5509/lab_ram/blob/master/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20%D0%BE%D1%82%202017-11-15%2010-06-13.png
 Рисунок 1 — Создание контейнера No1
 
 Далее был создан запущен контейнер 2 с примонтированным ранее созданным томом AllVolume
@@ -28,22 +28,22 @@ docker run -ti --name=Container2 --volumes-from Contaier1 alpine
 ```bash
 cat /myvolume/file.txt
 ```
-![alt-текст](https://github.com/den5509/lab_ram/blob/master/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20%D0%BE%D1%82%202017-11-15%2010-06-53.png)
+[logo]:https://github.com/den5509/lab_ram/blob/master/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20%D0%BE%D1%82%202017-11-15%2010-06-53.png
 Рисунок 2 — Создание контейнера No2 с примонтированным общим томом
 
 Затем, уже из контейнера 2 в тот же файл была записана строка с идентификатором контейнера. Далее содержимое было прочитано из контейнера 1:
 
-![alt-текст](https://github.com/den5509/lab_ram/blob/master/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20%D0%BE%D1%82%202017-11-15%2010-08-02.png)
+[logo]: https://github.com/den5509/lab_ram/blob/master/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20%D0%BE%D1%82%202017-11-15%2010-08-02.png
 Рисунок 3 — Запись в файл из контейнера 2 и чтение из контейнера 1
 Для проверки работы при одновременной записи из контейнеров в один и тот же файл, одновременно был запущен цикл с записью аналогичных строк использовалась команда:
 ```bash
 date; for I in `seq 99999`; do echo "write some information from " + $HOSTNAME > /allvolume/file.txt; done; date;
 ```
-![alt-текст](https://github.com/den5509/lab_ram/blob/master/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20%D0%BE%D1%82%202017-11-15%2010-10-54.png)
+[logo]: https://github.com/den5509/lab_ram/blob/master/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20%D0%BE%D1%82%202017-11-15%2010-10-54.png
 
 Рисунок 4 — Запуск циклов записи в файл
 
-![alt-текст](https://github.com/den5509/lab_ram/blob/master/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20%D0%BE%D1%82%202017-11-15%2010-20-43.png)
+[logo]: https://github.com/den5509/lab_ram/blob/master/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20%D0%BE%D1%82%202017-11-15%2010-20-43.png
 
 Рисунок 5 — Часть содержимого файла
 
