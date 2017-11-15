@@ -28,7 +28,7 @@ docker run -ti --name=Container2 --volumes-from Contaier1 alpine
 ```bash
 cat /myvolume/file.txt
 ```
-![alt-текст](https://github.com/den5509/lab_ram/blob/master/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20%D0%BE%D1%82%202017-11-15%2010-06-53.png)
+![alt-текст]({{"/Снимок экрана от 2017-11-15 10-06-13.png" | absolute_url}})
 Рисунок 2 — Создание контейнера No2 с примонтированным общим томом
 
 Затем, уже из контейнера 2 в тот же файл была записана строка с идентификатором контейнера. Далее содержимое было прочитано из контейнера 1:
